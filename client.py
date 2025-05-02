@@ -17,6 +17,11 @@ def client(hostname, port, filename):
 
             key = parts[1]
             value = parts[2] if len(parts) == 3 else ''
+
+            if command == 'PUT':
+                combined = f"P{key} {value}"
+                
+
                 
 
 
