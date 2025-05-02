@@ -15,6 +15,11 @@ class TupleSpaceServer:
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.server_socket.bind(('0.0.0.0', port))
         self.server_socket.listen(5)
+        print(f"Server listening on port {port}")
+        threading.Thread(target=self.print_statistics,daemon=True).start()
+        
+
+
         
 
 
