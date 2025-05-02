@@ -20,6 +20,8 @@ def client(hostname, port, filename):
 
             if command == 'PUT':
                 combined = f"P{key} {value}"
+            elif command == 'READ':
+                combined = f"R{key}"
                 
 
                 
