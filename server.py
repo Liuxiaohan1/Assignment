@@ -51,6 +51,16 @@ class TupleSpaceServer:
                         else:
                             self.errors += 1
                             response = f"{len(f'ERR {key} does not exist'):03} ERR {key} does not exist"
+                    elif command == 'P':
+                        self.put_operations += 1
+                        if key in self.tuple_space:
+                            self.errors += 1
+                            response = f"{len(f'ERR {key} already exists'):03} ERR {key} already exists"
+                        else:
+                            self.tuple_space[key] = value
+                            response = f"{len(f'OK ({key}, {value}) added'):03} OK ({key}, {value}) added"
+
+                    
                     
 
                    
