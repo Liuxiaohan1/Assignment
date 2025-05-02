@@ -10,6 +10,7 @@ def client(hostname, port, filename):
             parts = line.split(maxsplit = 2)
             if not parts:
                 continue
+            command = parts[0]
 
         
     
