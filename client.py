@@ -27,6 +27,10 @@ def client(hostname, port, filename):
             else:
                 print(f"Unknown command: {line}")
                 continue
+
+            message_len = len(combined)
+
+
                 
 
                 
