@@ -36,6 +36,9 @@ if __name__ == "__main__":
     if len(sys.argv) != 4:
         print("Usage: python client.py <hostname> <port> <filename>")
         sys.exit(1)
+        hostname = sys.argv[1]
+        port = int(sys.argv[2])
+        filename = sys.argv[3]
 
         
            
