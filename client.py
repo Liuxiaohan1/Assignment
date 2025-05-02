@@ -8,5 +8,8 @@ def client(hostname, port, filename):
         for line in lines:
             line = line.strip()
             parts = line.split(maxsplit = 2)
+            if not parts:
+                continue
+
         
     
