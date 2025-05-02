@@ -33,7 +33,10 @@ def client(hostname, port, filename):
             s.send(message.encode())
             response = s.recv(1024).decode()
 if __name__ == "__main__":
-    
+    if len(sys.argv) != 4:
+        print("Usage: python client.py <hostname> <port> <filename>")
+        sys.exit(1)
+
         
            
 
