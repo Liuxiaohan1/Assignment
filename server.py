@@ -12,8 +12,9 @@ class TupleSpaceServer:
         self.put_operations = 0
         self.errors = 0
         self.total_clients = 0
-
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.server_socket.bind(('0.0.0.0', port))
+        
 
 
 
