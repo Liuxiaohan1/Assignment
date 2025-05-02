@@ -76,6 +76,11 @@ class TupleSpaceServer:
                     avg_tuple_size = total_tuple_size / num_tuples
                     avg_key_size = sum(len(k) for k in self.tuple_space.keys()) / num_tuples
                     avg_value_size = sum(len(v) for v in self.tuple_space.values()) / num_tuples
+                print(f"Tuple space stats: {num_tuples} tuples, avg tuple size {avg_tuple_size:.2f}, "
+                      f"avg key size {avg_key_size:.2f}, avg value size {avg_value_size:.2f}, "
+                      f"total clients {self.total_clients}, total operations {self.total_operations}, "
+                      f"READs {self.read_operations}, GETs {self.get_operations}, PUTs {self.put_operations}, "
+                      f"errors {self.errors}")
 
 
 
