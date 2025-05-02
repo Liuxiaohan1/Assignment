@@ -43,6 +43,15 @@ class TupleSpaceServer:
                         else:
                             self.errors += 1
                             response = f"{len(f'ERR {key} does not exist'):03} ERR {key} does not exist"
+                    elif command == 'G':
+                        self.get_operations += 1
+                        if key in self.tuple_space:
+                            val = self.tuple_space.pop(key)
+                            response = f"{len(f'OK ({key}, {val}) removed'):03} OK ({key}, {val}) removed"
+                        else:
+                            self.errors += 1
+                            response = f"{len(f'ERR {key} does not exist'):03} ERR {key} does not exist"
+                    
 
                    
                     
