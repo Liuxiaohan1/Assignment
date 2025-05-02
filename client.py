@@ -16,6 +16,7 @@ def client(hostname, port, filename):
                 continue
 
             key = parts[1]
+            value = parts[2] if len(parts) == 3 else ''
                 
 
 
