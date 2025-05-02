@@ -24,6 +24,15 @@ class TupleSpaceServer:
                 data = client_socket.recv(1024).decode()
                 if not data:
                     break
+                try:
+                    message_size = int(data[:3])
+                    command = data[3]
+                    key_value = data[4:message_size].split(' ', 1)
+                    key = key_value[0]
+                    value = key_value[1] if len(key_value) > 1 else ''
+                    
+
+
 
         
 
