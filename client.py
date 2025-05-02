@@ -32,6 +32,9 @@ def client(hostname, port, filename):
             message = f"{message_length:03}{combined}"
             s.send(message.encode())
             response = s.recv(1024).decode()
+if __name__ == "__main__":
+    
+        
            
 
             
