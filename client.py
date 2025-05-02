@@ -11,6 +11,9 @@ def client(hostname, port, filename):
             if not parts:
                 continue
             command = parts[0]
+            if (command == 'PUT' and len(parts) != 3) or (command in('READ' ,'Get')and len(parts) != 2):
+                
+
 
         
     
