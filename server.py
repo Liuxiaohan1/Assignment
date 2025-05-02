@@ -67,6 +67,16 @@ class TupleSpaceServer:
     def print_statistics(self):
         while True:
             time.sleep(10)
+            with self.lock:
+                num_tuples = len(self.tuple_space)
+                if num_tuples == 0:
+                    avg_tuple_size = avg_key_size = avg_value_size = 0
+                else:
+                    total_tuple_size = sum(len(k) + len(v) for k, v in self.tuple_space.items())
+                    avg_tuple_size = total_tuple_size / num_tuples
+                    avg_key_size = sum(len(k) for k in self.tuple_space.keys()) / num_tuples
+                    avg_value_size = sum(len(v) for v in self.tuple_space.values()) / num_tuples
+
 
 
                     
