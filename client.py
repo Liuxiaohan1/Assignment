@@ -7,5 +7,6 @@ def client(hostname, port, filename):
         s.connect((hostname,port))
         for line in lines:
             line = line.strip()
+            parts = line.split(maxsplit = 2)
         
     
