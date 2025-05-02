@@ -64,6 +64,10 @@ class TupleSpaceServer:
             print(f"Client error: {e}")
         finally:
             client_socket.close()
+    def print_statistics(self):
+        while True:
+            time.sleep(10)
+
 
                     
                     
