@@ -85,6 +85,15 @@ class TupleSpaceServer:
         while True:
             client_socket, addr = self.server_socket.accept()
             threading.Thread(target=self.handle_client, args=(client_socket,)).start()
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) != 2:
+        print("Usage: python server.py <port>")
+        sys.exit(1)
+    port = int(sys.argv[1])
+    server = TupleSpaceServer(port)
+    server.start()
+    
 
 
 
