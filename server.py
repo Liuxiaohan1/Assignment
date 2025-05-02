@@ -17,6 +17,8 @@ class TupleSpaceServer:
         self.server_socket.listen(5)
         print(f"Server listening on port {port}")
         threading.Thread(target=self.print_statistics,daemon=True).start()
+    def handle_client(self, client_socket):
+        self.total_clients += 1
         
 
 
