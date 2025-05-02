@@ -5,5 +5,6 @@ def client(hostname, port, filename):
         lines = f.readlines()
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((hostname,port))
+        for line in lines:
         
     
