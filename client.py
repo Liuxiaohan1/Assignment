@@ -32,6 +32,7 @@ def client(hostname, port, filename):
             message = f"{message_length:03}{combined}"
             s.send(message.encode())
             response = s.recv(1024).decode()
+
 if __name__ == "__main__":
     if len(sys.argv) != 4:
         print("Usage: python client.py <hostname> <port> <filename>")
@@ -39,6 +40,7 @@ if __name__ == "__main__":
         hostname = sys.argv[1]
         port = int(sys.argv[2])
         filename = sys.argv[3]
+        client(hostname, port, filename)
 
         
            
