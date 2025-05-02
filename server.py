@@ -30,6 +30,21 @@ class TupleSpaceServer:
                     key_value = data[4:message_size].split(' ', 1)
                     key = key_value[0]
                     value = key_value[1] if len(key_value) > 1 else ''
+                except(ValueError, IndexError):
+                    print("Error parsing request")
+                    continue
+                response = ""
+                with self.lock:
+                    self.total_operations+= 1
+                    if command == 'R':
+                        self.read_operations += 1
+                        if key in self.tuple_space:
+                            response = f"{len(f'OK ({key}, {self.tuple_space[key]}) read'):03} OK ({key}, {self.tuple_space[key]}) read"
+                        else:
+                            self.errors += 1
+                            response = f"{len(f'ERR {key} does not exist'):03} ERR {key} does not exist"
+
+                   
                     
 
 
