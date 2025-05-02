@@ -81,6 +81,10 @@ class TupleSpaceServer:
                       f"total clients {self.total_clients}, total operations {self.total_operations}, "
                       f"READs {self.read_operations}, GETs {self.get_operations}, PUTs {self.put_operations}, "
                       f"errors {self.errors}")
+    def start(self):
+        while True:
+            client_socket, addr = self.server_socket.accept()
+            threading.Thread(target=self.handle_client, args=(client_socket,)).start()
 
 
 
