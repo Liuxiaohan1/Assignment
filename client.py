@@ -28,7 +28,8 @@ def client(hostname, port, filename):
                 print(f"Unknown command: {line}")
                 continue
 
-            message_len = len(combined)
+            message_length = len(combined)
+            message = f"{message_length:03}{combined}"
 
 
                 
