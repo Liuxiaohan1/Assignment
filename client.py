@@ -12,6 +12,10 @@ def client(hostname, port, filename):
                 continue
             command = parts[0]
             if (command == 'PUT' and len(parts) != 3) or (command in('READ' ,'Get')and len(parts) != 2):
+                print(f"Invalid command: {line}")
+                continue
+
+            key = parts[1]
                 
 
 
