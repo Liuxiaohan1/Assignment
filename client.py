@@ -31,7 +31,9 @@ def client(hostname, port, filename):
             message_length = len(combined)
             message = f"{message_length:03}{combined}"
             s.send(message.encode())
-            
+            response = s.recv(1024).decode()
+           
+
             
 
 
