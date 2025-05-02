@@ -60,6 +60,10 @@ class TupleSpaceServer:
                             self.tuple_space[key] = value
                             response = f"{len(f'OK ({key}, {value}) added'):03} OK ({key}, {value}) added"
                 client_socket.send(response.encode())
+        except Exception as e:
+            print(f"Client error: {e}")
+        finally:
+            client_socket.close()
 
                     
                     
