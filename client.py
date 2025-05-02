@@ -24,6 +24,9 @@ def client(hostname, port, filename):
                 combined = f"R{key}"
             elif command == 'GET':
                 combined = f"G{key}"
+            else:
+                print(f"Unknown command: {line}")
+                continue
                 
 
                 
