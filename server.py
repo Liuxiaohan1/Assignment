@@ -19,6 +19,12 @@ class TupleSpaceServer:
         threading.Thread(target=self.print_statistics,daemon=True).start()
     def handle_client(self, client_socket):
         self.total_clients += 1
+        try:
+            while True:
+                data = client_socket.recv(1024).decode()
+                if not data:
+                    break
+
         
 
 
