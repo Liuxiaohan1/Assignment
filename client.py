@@ -6,5 +6,6 @@ def client(hostname, port, filename):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((hostname,port))
         for line in lines:
+            line = line.strip()
         
     
