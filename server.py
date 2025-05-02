@@ -5,5 +5,6 @@ class TupleSpaceServer:
     def __init__(self, port):
         self.port = port
         self.tuple_space = {}
+        self.lock = threading.Lock()
 
 
