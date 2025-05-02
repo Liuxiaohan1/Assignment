@@ -22,6 +22,8 @@ def client(hostname, port, filename):
                 combined = f"P{key} {value}"
             elif command == 'READ':
                 combined = f"R{key}"
+            elif command == 'GET':
+                combined = f"G{key}"
                 
 
                 
