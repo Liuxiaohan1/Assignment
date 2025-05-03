@@ -24,12 +24,14 @@ class TupleSpaceServer:
                 data = client_socket.recv(1024).decode()
                 if not data:
                     break
+                print(f"Received raw data: {data}")
                 try:
                     message_size = int(data[:3])
                     command = data[3]
                     key_value = data[4:message_size].split(' ', 1)
                     key = key_value[0]
                     value = key_value[1] if len(key_value) > 1 else ''
+                    print(f"Parsed command: {command}, key: {key}, value: {value}")
                 except(ValueError, IndexError):
                     print("Error parsing request")
                     continue
@@ -59,6 +61,7 @@ class TupleSpaceServer:
                         else:
                             self.tuple_space[key] = value
                             response = f"{len(f'OK ({key}, {value}) added'):03} OK ({key}, {value}) added"
+                print(f"Sending response: {response}")
                 client_socket.send(response.encode())
         except Exception as e:
             print(f"Client error: {e}")

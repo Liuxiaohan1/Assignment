@@ -31,8 +31,10 @@ def client(hostname, port, filename):
 
             message_length = len(combined)
             message = f"{message_length:03}{combined}"
+            print(f"Sending request: {message}")
             s.send(message.encode())
             response = s.recv(1024).decode()
+            print(f"Received response: {response}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
