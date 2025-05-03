@@ -11,7 +11,8 @@ def client(hostname, port, filename):
             if not parts:
                 continue
             command = parts[0]
-            if (command == 'PUT' and len(parts) != 3) or (command in('READ' ,'Get')and len(parts) != 2):
+            if (command == 'PUT' and len(parts) != 3) or \
+                (command in('READ' ,'Get')and len(parts) != 2):
                 print(f"Invalid command: {line}")
                 continue
 
@@ -37,10 +38,10 @@ if __name__ == "__main__":
     if len(sys.argv) != 4:
         print("Usage: python client.py <hostname> <port> <filename>")
         sys.exit(1)
-        hostname = sys.argv[1]
-        port = int(sys.argv[2])
-        filename = sys.argv[3]
-        client(hostname, port, filename)
+    hostname = sys.argv[1]
+    port = int(sys.argv[2])
+    filename = sys.argv[3]
+    client(hostname, port, filename)
 
         
            
